@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: white;
+  scrollbar-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #585858;
+}
+
+.addPage-button {
+  position: absolute;
+  width: 240px;
+  height: 40px;
+  bottom: 0px;
+  flex-direction: column;
+  background: rgb(247, 246, 243);
+  align-items: left;
+  padding-left: 20px;
+  padding-top: 10px;
+  font-size: 15px;
+  border-right: 0px solid black;
+  border-left: 0px solid black;
+  border-bottom: 0px solid black;
+  border-top: 1px solid lightgray;
+  color: rgba(25, 23, 17, 0.6);
+}
+
+.addPage-button:hover {
+  background-color: lightgray;
+}
+
+.header {
+  display: flex;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.notion-img {
+  width: 40px;
+  height: 40px;
+}
+
+.header-text {
+  margin: 10px;
+  flex-grow: 1;
+}
+
+.postsPage {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  flex-shrink: 0;
+  flex-direction: column;
+  background: rgb(247, 246, 243);
+  height: 100vh;
+  width: 240px;
+}
+
+.postsPage button {
+  border: 1px solid lightgray;
+  color: rgba(25, 23, 17, 0.6);
+}
+
+.postsPage button:hover {
+  background-color: lightgray;
+}
+
+.addPost-button {
+  margin-right: 1px;
+}
+
+.list {
+  padding-bottom: 50px;
+  height: 75%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: gray;
+  font-weight: bold;
+}
+
+.list ul {
+  padding-left: 5%;
+}
+
+.list li {
+  width: 100%;
+  font-size: 0.8em;
+  display: inline-flex;
+  padding: 5px 0px 2px 5px;
+}
+
+.list li:hover {
+  color: gray;
+}
+
+.list li button {
+  width: 20px;
+  height: 20px;
+  background: rgb(247, 246, 243);
+  border-radius: 20%;
+  padding: 0px;
+}
+
+.list-title {
+  display: block;
+  width: 70px;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.delPost-button {
+  margin-right: 10px;
+}
+
+.postEditPage.active {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 5fr 2fr;
+  align-content: stretch;
+}
+
+.postEditPage {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5fr 2fr;
+  align-content: stretch;
+}
+
+.editor {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  min-height: 80vh;
+  padding-bottom: 40px;
+}
+
+.editor-title {
+  padding: 100px 10% 0px 10%;
+  width: 90%;
+  font-size: 2em;
+  font-weight: bold;
+  border: none;
+  margin-bottom: 30px;
+}
+
+.editor-title:focus {
+  outline: none;
+}
+
+.editor-content {
+  padding: 20px 10% 10px 10%;
+  font-size: 1.2em;
+  flex-grow: 1;
+  overflow-y: auto;
+  border: none;
+  resize: none;
+}
+
+.editor-content:focus {
+  outline: none;
+}
+
+.subPostList {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  margin-left: 10%;
+  max-height: 10vh;
+}
+
+.subPostList-toggle {
+  background-color: rgb(247, 246, 243);
+  border: 1px solid lightgray;
+  color: rgba(25, 23, 17, 0.6);
+  border-radius: 20%;
+  width: 23px;
+  height: 23px;
+  padding: 0;
+  margin: 0;
+}
+
+.subPostList-toggle:hover {
+  background-color: lightgray;
+}
+
+.subPostList-title {
+  padding-left: 5px;
+  font-size: 15px;
+}
+
+.subPostLists {
+  display: none;
+}
+
+.subPostLists.active {
+  display: block;
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+.subPostLists ul {
+  padding-left: 3%;
+  list-style: "▶ ";
+  color: gray;
+}
+
+.subPostLists li {
+  font-size: 0.9em;
+  padding: 2px;
+}
+
+.subPostLists li:hover {
+  color: gray;
+}
+
+.subPostLists p {
+  color: rgba(25, 23, 17, 0.6);
+}
+
+.subPostLists .subPost-title {
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
