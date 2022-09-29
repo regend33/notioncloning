@@ -19,7 +19,7 @@ export default function PostList({
   };
 
   const docRender = ({ title, id, documents }, docArr) => {
-    docArr.push(\
+    docArr.push(
       `<li data-id=${id}>
       <span class="list-title">▶ ${title}</span>
       <button class="addPost-button">+</button>

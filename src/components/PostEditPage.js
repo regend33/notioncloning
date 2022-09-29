@@ -29,7 +29,7 @@ export default function PostEditPage({ $target, initialState, listRendering }) {
         tempSaveData: new Date(),
       });
     },
-    renderSubPost: (id) => {
+    subPostRender: (id) => {
       this.setState({ id });
       history.replaceState(null, null, `/documents/${id}`);
     },

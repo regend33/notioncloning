@@ -2,7 +2,7 @@ export default function Editor({
   $target,
   initialState,
   onEditing,
-  renderSubPost,
+  subPostRender,
 }) {
   const $editor = document.createElement("div");
   const $subPostList = document.createElement("div");
@@ -61,7 +61,7 @@ export default function Editor({
     }
     if (e.target.className === "subPost-title") {
       const $li = e.target.closest("li");
-      renderSubPost($li.dataset.id);
+      subPostRender($li.dataset.id);
     }
   });
 
