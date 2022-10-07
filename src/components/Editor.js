@@ -1,6 +1,9 @@
 export default function Editor({
   $target,
-  initialState,
+  initialState = {
+    title: "",
+    content: "",
+  },
   onEditing,
   subPostRender,
 }) {
@@ -41,9 +44,9 @@ export default function Editor({
     const subLists = docRender({ documents }, []).join("");
 
     $editor.innerHTML = `
-	    <input type="text" class="editor-title" value="${title}" />
-	    <textarea class="editor-content">${content}</textarea>
-	  `;
+      <input type="text" class="editor-title" value="${title}" />
+      <textarea class="editor-content">${content}</textarea>
+    `;
 
     $subPostList.innerHTML = `
     <button class="subPostList-toggle">▼</button>

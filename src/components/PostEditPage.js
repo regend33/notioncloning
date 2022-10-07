@@ -23,7 +23,6 @@ export default function PostEditPage({ $target, initialState, listRendering }) {
         await listRendering();
       }, 1000);
 
-      preview.setState(post);
       setItem(postLocalSaveKey, {
         ...post,
         tempSaveData: new Date(),
