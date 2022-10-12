@@ -29,7 +29,9 @@ export default function Editor({
       for (let document of documents) {
         const { title, id, documents } = document;
         docArr.push(
-          `<li data-id=${id}><span class="subPost-title">${title}</span></li>`
+          `<li data-id=${id}><span class="subPost-title">${
+            title ? title : "제목 없음"
+          }</span></li>`
         );
         docRender({ documents }, docArr);
       }
