@@ -21,7 +21,7 @@ export default function PostList({
   const docRender = ({ title, id, documents }, docArr) => {
     docArr.push(
       `<li data-id=${id}>
-      <span class="list-title">▶ ${title}</span>
+      <span class="list-title">▶ ${title ? title : "제목 없음"}</span>
       <button class="addPost-button">+</button>
       <button class="delPost-button">-</button>
       </li>`
@@ -47,7 +47,7 @@ export default function PostList({
         .map(({ title, id, documents }) =>
           docRender({ title, id, documents }, []).join("")
         )
-        .join("")}  
+        .join("")}
 	  </ul>`;
   };
 

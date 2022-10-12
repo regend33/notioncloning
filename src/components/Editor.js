@@ -44,9 +44,13 @@ export default function Editor({
     const subLists = docRender({ documents }, []).join("");
 
     $editor.innerHTML = `
-      <input type="text" class="editor-title" value="${title}" />
-      <textarea class="editor-content">${content}</textarea>
-    `;
+      <input type="text" class="editor-title" placeholder="제목 없음" value="${
+        title ? title : ""
+      }" />
+      <textarea class="editor-content" placeholder="입력하세요">${
+        content ? content : ""
+      }</textarea>
+      `;
 
     $subPostList.innerHTML = `
     <button class="subPostList-toggle">▼</button>
@@ -74,8 +78,8 @@ export default function Editor({
 
     const nextState = {
       ...this.state,
-      title: title,
-      content: content,
+      title,
+      content,
     };
 
     this.state = nextState;

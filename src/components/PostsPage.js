@@ -28,7 +28,7 @@ export default function PostsPage({ $target, initialState }) {
     initialState: [],
     onCreateSubPost: async (parentId) => {
       const post = {
-        title: "Untitled",
+        title: "",
         parent: parentId,
       };
       const newPost = await fetchNewPost(post);
@@ -53,7 +53,8 @@ export default function PostsPage({ $target, initialState }) {
   $button.addEventListener("click", async (e) => {
     if (e.target.className === "addPage-button") {
       const post = {
-        title: "Untitled",
+        title: "",
+        content: "",
         parent: null,
       };
       const newPost = await fetchNewPost(post);

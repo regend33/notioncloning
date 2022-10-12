@@ -13,7 +13,9 @@ export default function PostEditPage({ $target, initialState, listRendering }) {
 
   const editor = new Editor({
     $target: $page,
-    initialState: {},
+    initialState: {
+      title: "",
+    },
     onEditing: (post) => {
       if (timer !== null) {
         clearTimeout(timer); // debounce
