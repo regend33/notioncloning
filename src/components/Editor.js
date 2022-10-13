@@ -54,6 +54,11 @@ export default function Editor({
       }</textarea>
       `;
 
+    // textarea를 contentEditable로 변경하여 사용자가 스타일을 조정 할 수 있게 변경
+    // <div class="editor-content" contentEditable="true" placeholder="입력하세요">${
+    //   content ? content : ""
+    // }</div>
+
     $subPostList.innerHTML = `
     <button class="subPostList-toggle">▼</button>
     <span class="subPostList-title">하위 페이지 목록</span>

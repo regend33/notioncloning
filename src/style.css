@@ -256,3 +256,8 @@ main {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/* [contentEditable="true"]:empty:before {
+  content: attr(placeholder);
+  color: gray;
+} */
