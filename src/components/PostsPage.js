@@ -45,16 +45,16 @@ export default function PostsPage({ $target, initialState }) {
     },
   });
 
-  this.render = async () => {
+  this.render = () => {
     $target.appendChild($page);
     $target.appendChild($button);
   };
 
   $button.addEventListener("click", async (e) => {
+    e.preventDefault();
     if (e.target.className === "addPage-button") {
       const post = {
         title: "",
-        content: "",
         parent: null,
       };
       const newPost = await fetchNewPost(post);

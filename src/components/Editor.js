@@ -62,9 +62,9 @@ export default function Editor({
     $subPostList.innerHTML = `
     <button class="subPostList-toggle">▼</button>
     <span class="subPostList-title">하위 페이지 목록</span>
-    <div class="subPostLists">${
+    <span class="subPostLists">${
       subLists === "" ? `<p>하위 페이지 없음</p>` : subLists
-    }</div>
+    }</span>
     `;
   };
 
